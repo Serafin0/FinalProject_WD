@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
+<head>
+<!-- Serafino, Pampena
+     Description:
+	   Date:                  -->
+  <title>Top Page</title>
+<style type="text/css">
+ body{ background-color:#D0B59A; }
+ table{ background-color:#D0B59A; } <!--#085739-->
+ h1{ color:blue; }
+ #buttonAlign {	padding-left:25px; }
+</style>
+  <script type="text/javascript" src="JS/JSForm.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+
+<!--onload = how the page will load upon starting = calling the "load" function-->
+<body onload="load()">
+ <table width="100%">
+   <tr>
+    <td> <img src="IMG/WorldLogo.jpeg" title="Hello" alt="logo" width="100"/> </td>
+    <td align="center"> <h1>WEB CLIENT DEVELOPMENT</h1> </td>
+    <td align="right">
+	<form name="form1">
+    <table>
+      <tr>
+        <!--assigning classes to every part of the login form-->
+       <td class="login">User    :</td>
+       <!--class login for the input text for user name 
+             and password to call in JS-->
+       <td class="login"><input type="text" name="username" id="username"/>&nbsp;&nbsp;</td>
+       <!--button that wil call the "checkuserlogin" function-->
+       <td class="login"><input type="button" id="b1" onClick="checkuserlogin()" value="Login" /></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="logout"><span id="usname"></span></td>
+      </tr>
+        <tr>
+         <td class="login">Password:</td>
+       <td class="login"><input type="password" name="password" id="password"/>&nbsp;&nbsp;</td>
+       <!--making a logout button that will call the "logout" function-->
+       <td class="logout"><input type="button" id="b2" onClick="checklogout()" value="Logout" /></td>
+      <tr>
+       <br />
+     </form>
+      </td>
+     </tr>
+  </table>
+ 
+</body>
+
+</html>

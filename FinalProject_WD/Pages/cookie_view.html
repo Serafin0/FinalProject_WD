@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie View</title>
+</head>
+<body>
+    <h1>Cookie View</h1>
+    <p>Username: <span id="username"></span></p>
+    <p>Password: <span id="password"></span></p>
+    <p>Email: <span id="email"></span></p>
+    <p>Phone: <span id="phone"></span></p>
+    <p>Address: <span id="address"></span></p>
+    <p>Favourite Page: <span id="favPage"></span></p>
+    
+    <script>
+        // retrieve cookie values and display them
+        document.getElementById("username").innerText = getCookie("username");
+        document.getElementById("password").innerText = getCookie("password");
+        document.getElementById("email").innerText = getCookie("email");
+        document.getElementById("phone").innerText = getCookie("phone");
+        document.getElementById("address").innerText = getCookie("address");
+        document.getElementById("favPage").innerText = getCookie("favPage");
+
+        // function to retrieve cookie value
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+    </script>
+</body>
+</html>

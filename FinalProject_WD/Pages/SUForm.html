@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+          border:1px solid black;
+          border-radius: 25px;
+        }
+    </style>
+
+      <script type="text/javascript">
+        //creating a cookie
+        function setCookie(cookname, cookvalue, expirationdays) 
+        {
+         var d = new Date();
+         d.setTime(d.getTime() + (expirationdays*24*60*60*1000));
+         var expires = "expires="+d.toUTCString();
+         document.cookie = cookname + "=" + cookvalue + "; " + expires;
+        }
+        
+       //saving user info
+       function saveUserInfo() {
+          var username = document.getElementById("Username").value;
+          var password = document.getElementById("Password").value;
+          var email = document.getElementById("Email").value;
+          var phone = document.getElementById("PhoneNBR").value;
+          var address = document.getElementById("Address").value;
+          var favPage = document.getElementById("FavPage").value;
+
+          setCookie("username", username, 365);
+          setCookie("password", password, 365);
+          setCookie("email", email, 365);
+          setCookie("phone", phone, 365);
+          setCookie("address", address, 365);
+          setCookie("favPage", favPage, 365);
+
+          alert("User info saved!");
+       }
+
+       //showing user info
+       function showUserInfo() {
+          window.open("cookie_view.html", "_self",true); // open new tab to display cookies
+       }
+      </script>
+</head>
+
+<body">
+    <h1>Sign Up Form</h1><br>
+    <p style="font-size:30px ;">Please enter all the information below</p><br>
+    <p style="font-size: 25px; ;">Signing up will offer access to the sites among other benefits!!</p>
+    <fieldset>
+        <div style= "background-color:beige">
+           <legend>Sign up</legend>
+           Name:<input type="text" id="Username" name="username" size="25" maxlength="10"><br>
+           Password:<input type="text" id="Password" name="password" size="25" maxlength="10"><br>
+           Email:<input type="text" id="Email" name="Email" size="25" maxlength="30"><br>
+           Phone Number:<input type="tel" id="PhoneNBR" name="Email" size="25" maxlength="30"><br>
+           Address:<input type="text" id="Address" name="Addres" size="25" maxlength="30"><br>
+           Favourite Page:<input type="text" id="FavPage" name="Page" size="25" maxlength="30"><br>
+           <button type="button" onclick="saveUserInfo()">Save Info</button>
+           <button type="button" onclick="showUserInfo()">View Info</button>
+        </div>
+      </fieldset>
+      <script src="../JS/SUForm.js"></script>
+</body>
+</html>
